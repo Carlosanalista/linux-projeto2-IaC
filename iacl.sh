@@ -1,6 +1,8 @@
 #!/bin/bash
 
-echo "Criando os diretórios"
+#Infrastructure as Code (IaC) é o gerenciamento e provisionamento da infraestrutura por meio de códigos.
+
+echo "Criando os diretórios" 
 
 mkdir /publico
 mkdir /adm
@@ -27,12 +29,14 @@ useradd josefina -m -s /bin/bash -p $(openssl passwd Senha123) -G GRP_SEC
 useradd amanda -m -s /bin/bash -p $(openssl passwd Senha123) -G GRP_SEC
 useradd rogerio -m -s /bin/bash -p $(openssl passwd Senha123) -G GRP_SEC
 
-echo "Dando permissões aos diretórios"
+echo "Indicando o dono dos grupos e dando permissões aos diretórios"
 
+#O usuário root será o dono dos grupos criados
 chown root:GRP_ADM /adm
 chown root:GRP_VEN /ven
 chown root:GRP_SEC /sec
 
+#Modificando as permissões dos diretórios
 chmod 770 /adm
 chmod 770 /ven
 chmod 770 /sec
