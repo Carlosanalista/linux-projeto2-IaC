@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Infrastructure as Code (IaC) é o gerenciamento e provisionamento da infraestrutura por meio de códigos.
+
 #Primeiro vamos atualizar o Servidor
 
 echo "Atualizando o Servidor"
@@ -9,11 +11,11 @@ apt-get upgrade -y
 #Vamos instalar o apache2 e o unzip
 
 echo "Instalando Apache2"
-apt install apache2 -y
+apt-get install apache2 -y
 systemctl enable apache2
 
 echo "Instalando unzip"
-apt install unzip -y
+apt-get install unzip -y
 
 #Vamos baixar a aplicação do github e colocar na pasta /tmp
 
